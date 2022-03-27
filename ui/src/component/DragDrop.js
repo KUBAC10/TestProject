@@ -113,11 +113,11 @@ function DragDrop({sendDataToParent}){
           },
           height:{
             real:Pointer.current.height,
-            virtual:prevState.pointer.height.real
+            virtual:Pointer.current.height
           },
           width:{
             real:Pointer.current.width,
-            virtual:prevState.pointer.width.real
+            virtual:Pointer.current.width
           }
         },
         triangle:{
@@ -133,11 +133,11 @@ function DragDrop({sendDataToParent}){
           },
           height:{
             real:Triangle.current.height,
-            virtual:prevState.triangle.height.real
+            virtual:Triangle.current.height
           },
           width:{
             real:Triangle.current.width,
-            virtual:prevState.triangle.width.virtual
+            virtual:Triangle.current.width
           }
         },
       }
@@ -151,17 +151,12 @@ function DragDrop({sendDataToParent}){
   useEffect(()=>{checkPositionInsideTriangle() },[current])
  
   useEffect(()=>{
-    //console.log(Inside)
     sendDataToParent(current.pointer.position.x.virtual,current.pointer.position.y.virtual,Inside.in)
   },[Inside])   
 
 
 
   const checkPositionInsideTriangle = () => {
-    // console.log(current.pointer.position.x.real)
-    // console.log(current.pointer.position.y.real)
-    // console.log(current.pointer.position.x.virtual)
-    // console.log(current.pointer.position.y.virtual)    
     if (0<=current.pointer.position.x.virtual && current.pointer.position.x.virtual<=160 && 
       -current.triangle.height.virtual*2*current.pointer.position.x.virtual/current.triangle.width.virtual+current.triangle.height.virtual<=current.pointer.position.y.virtual && 
       current.pointer.position.y.virtual<=current.triangle.height.virtual) {

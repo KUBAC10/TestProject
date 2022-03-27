@@ -1,8 +1,8 @@
-import React, {useEffect,useState} from 'react';
+import React, {useEffect,useState,useLayoutEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 import DragDrop from './component/DragDrop';
-import Heatmap from './component/Heatmap'
+import Heatmap from './component/Heatmap';
 
 const apiUrl = `http://localhost:8080`;
 
