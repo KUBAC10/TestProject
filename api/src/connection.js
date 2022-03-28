@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const connection = "mongodb://localhost:27017/test_task";
+//const connection = "mongodb://mongo:27017/test_task";
+const connection = "mongodb+srv://Kuba:Kuba10@testdb.cwsja.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const connectDb = () => {
   return mongoose.connect(connection);

@@ -4,7 +4,7 @@ import './App.css';
 import DragDrop from './component/DragDrop';
 import Heatmap from './component/Heatmap';
 
-const apiUrl = `http://localhost:8080`;
+const apiUrl = `https://api-dot-testproject-345406.uc.r.appspot.com`;
 
 function App(){
 
