@@ -1,4 +1,4 @@
-import React, {useEffect,useState,useLayoutEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import './App.css';
 import DragDrop from './component/DragDrop';
@@ -27,12 +27,18 @@ function App(){
     });
   }
 
+
+useEffect(()=>{window.addEventListener('resize',()=>{setState((prevState)=>({points:prevState.points}))})},[])
+
+
   return (
     <div className="App">
       <header className="App-header">
+        <div style={{ position: 'relative' }}>
         <DragDrop sendDataToParent={(x,y,status)=>{  
           setInPoint(()=>({x:x,y:y,status:status}))
           }}></DragDrop>
+        </div>
         <button disabled={inPoint.status===0} onClick={sendPoint}>Create Point</button>
         <Heatmap state={state}></Heatmap>
         <p>Users list:</p>

@@ -156,6 +156,7 @@ function DragDrop({sendDataToParent}){
 
 
 
+
   const checkPositionInsideTriangle = () => {
     if (0<=current.pointer.position.x.virtual && current.pointer.position.x.virtual<=160 && 
       -current.triangle.height.virtual*2*current.pointer.position.x.virtual/current.triangle.width.virtual+current.triangle.height.virtual<=current.pointer.position.y.virtual && 
@@ -172,7 +173,7 @@ function DragDrop({sendDataToParent}){
  
   return(
     <>
-      <div style={{ position: 'relative' }} >
+      <div >
         <div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 80 }}>
             <div></div>
